@@ -12,7 +12,7 @@ Reimplemention of the research paper [MAGDI: Structured Distillation of Multi-Ag
 ![image](https://github.com/user-attachments/assets/032ab31b-13c5-484c-9124-a6d476e0f71a)
 
 ## Results
-- MAGDi outperformed both single-teacher and multi-teacher methods on commonsense and math reasoning tasks with around 5% accuracy improvement on average.
+- MAGDi outperformed both single-teacher and multi-teacher methods on commonsense and math reasoning tasks with around 4.61% accuracy improvement on average.
 - MAGDI-distilled models reduced the number of tokens required during inference by up to 9 times compared to teacher models.
 - Demonstrated better out-of-domain performance compared to baseline distillation methods.
 - Larger student models trained with MAGDI performed better, showing positive scaling with model size.
