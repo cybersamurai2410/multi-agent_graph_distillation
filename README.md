@@ -1,6 +1,15 @@
 # Small Language Model Reasoning using Multi-Agent Graph Distillation 
 Reimplemention of the research paper [MAGDI: Structured Distillation of Multi-Agent Interaction Graphs Improves Reasoning in Smaller Language Models](https://arxiv.org/pdf/2402.01620v2) using structured knowledge distillation to improve reasoning of small language models from integrating multi-agent interaction graph with LLMs.  
 
+## MAGDI 
+- **MAGDI** (Multi-Agent Graph Distillation) represents multi-agent interactions between LLMs (teachers) as graphs:
+  - **Nodes**: Represent reasoning steps or outputs from teacher models.
+  - **Edges**: Represent the relationships between these reasoning steps such as agreement and disagreement.
+- This graph-based structure is used to distill reasoning into smaller language models (students) using structured objectives:
+  - **Next-token prediction**: Mimics natural text generation tasks.
+  - **Contrastive loss**: Differentiates between correct and incorrect reasoning paths.
+  - **Graph-based objective**: Helps the student understand and replicate reasoning structures.
+
 ## Pipeline  
 1. Prepare MAGs Training Data - Build reasoning graphs from multi-agent interactions between LLMs i.e. teacher models.
 2. Get Node Embeddings - Encode reasoning steps into numerical representations.
@@ -12,7 +21,7 @@ Reimplemention of the research paper [MAGDI: Structured Distillation of Multi-Ag
 ![image](https://github.com/user-attachments/assets/032ab31b-13c5-484c-9124-a6d476e0f71a)
 
 ## Results
-- MAGDi outperformed both single-teacher and multi-teacher methods on commonsense and math reasoning tasks with around 4.61% accuracy improvement on average.
+- MAGDi multi-teacher outperformed single-teacher distillation type on commonsense and math reasoning tasks with around 4.61% accuracy improvement on average.
 - MAGDI-distilled models reduced the number of tokens required during inference by up to 9 times compared to teacher models.
 - Demonstrated better out-of-domain performance compared to baseline distillation methods.
 - Larger student models trained with MAGDI performed better, showing positive scaling with model size.
